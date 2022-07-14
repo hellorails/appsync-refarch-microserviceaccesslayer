@@ -59,6 +59,8 @@ envCache --set ORDERAPIINFO ${ORDERAPIINFO}
 echo "ORDERAPIINFO="${ORDERAPIINFO}
 
 echo "# Export API Endpoint"
+echo "# going next"
+echo "${cat} ./amplify/#current-cloud-backend/amplify-meta.json"
 export GRAPHQL_ENDPOINT=$(jq -r '.api[(.api | keys)[0]].output.GraphQLAPIEndpointOutput' ./amplify/#current-cloud-backend/amplify-meta.json)
 
 
