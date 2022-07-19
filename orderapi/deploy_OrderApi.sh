@@ -57,7 +57,6 @@ echo "# Store Amplify CLI Cloud-Formation stack info in environment cache"
 ORDERAPIINFO="$(amplify env get --json --name ${ENV})"
 envCache --set ORDERAPIINFO ${ORDERAPIINFO}
 echo "ORDERAPIINFO="${ORDERAPIINFO}
-echo "${cat ./amplify/#current-cloud-backend/amplify-meta.json}"
 
 echo "# Export API Endpoint"
 export GRAPHQL_ENDPOINT=$(jq -r '.api[(.api | keys)[0]].output.GraphQLAPIEndpointOutput' ./amplify/#current-cloud-backend/amplify-meta.json)
